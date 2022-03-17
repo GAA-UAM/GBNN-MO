@@ -1,17 +1,20 @@
 # %%
-import seaborn as sns
-import matplotlib.pyplot as plt
 import os
-from scipy.io import arff
-import pandas as pd
-import numpy as np
 import warnings
+import numpy as np
+import pandas as pd
+import seaborn as sns
+from scipy.io import arff
+import matplotlib.pyplot as plt
+
 warnings.simplefilter("ignore")
 
 
 random_state = 123
 np.random.seed(random_state)
 
+
+path = 'https://github.com/lefman/mulan-extended/tree/master/datasets'
 path = r"D:\Academic\Ph.D\Programming\DataBase\PhD Thesis\Regression\mtr_datasets"
 
 
@@ -35,10 +38,12 @@ def df(name, d):
     return X, y
 
 # name and features for different datasets
-# andro.arff, 30, missing value = False
-# atp1d.arff, 411, missing value = False
-# atp7d.arff, 411, missing value = False
-# edm.arff, 16, missing value = False
+
+# | name | d | missing values |
+# andro.arff, 30, False
+# atp1d.arff, 411, False
+# atp7d.arff, 411, False
+# edm.arff, 16, False
 # enb.arff, 8
 # jura.arff, 15
 # rf1.arff, 64
@@ -46,7 +51,9 @@ def df(name, d):
 
 name = "andro.arff"
 d = 30
-X, y = df(name, d)[0], df(name, d)[1]
+
+if __name__ == "__main__":
+    X, y = df(name, d)[0], df(name, d)[1]
 
 
 # %% rf1
@@ -55,9 +62,4 @@ dt_path = os.path.join(path, dt_name)
 df = dt(dt_path)
 X = (df.iloc[:, :8])
 y = (df.iloc[:, 8:])
-
-X
-# Delete the missing values
-
-# %%
-y
+#%%
