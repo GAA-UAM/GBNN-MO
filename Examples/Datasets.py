@@ -14,8 +14,8 @@ random_state = 123
 np.random.seed(random_state)
 
 
-path = 'https://github.com/lefman/mulan-extended/tree/master/datasets'
-# path = r"D:\Academic\Ph.D\Programming\DataBase\PhD Thesis\Regression\mtr_datasets"
+# path = 'https://github.com/lefman/mulan-extended/tree/master/datasets'
+path = r"D:\Academic\Ph.D\Programming\DataBase\PhD Thesis\Regression\mtr_datasets"
 
 
 def dt(path):
@@ -37,16 +37,7 @@ def df(name, d):
     y = (df.iloc[:, d:]).values
     return X, y
 
-# name and features for different datasets
 
-# | name | d | missing values |
-# andro.arff, 30, False
-# atp1d.arff, 411, False
-# atp7d.arff, 411, False
-# edm.arff, 16, False
-# enb.arff, 8
-# jura.arff, 15
-# rf1.arff, 64
 
 
 name = "andro.arff"
@@ -57,9 +48,10 @@ if __name__ == "__main__":
 
 
 # %% rf1
-dt_name = "enb.arff"
-dt_path = os.path.join(path, dt_name)
-df = dt(dt_path)
-X = (df.iloc[:, :8])
-y = (df.iloc[:, 8:])
-#%%
+# dt_name = "scm1d.arff"
+# dt_path = os.path.join(path, dt_name)
+# df = dt(dt_path)
+# X = (df.iloc[:, :280])
+# y = (df.iloc[:, 280:])
+
+

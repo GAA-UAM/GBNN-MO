@@ -1,0 +1,14 @@
+name and features for different datasets
+
+- | name | d | missing values |
+
+- andro.arff, 30, False
+- atp1d.arff, 411, False
+- atp7d.arff, 411, False
+- edm.arff, 16, False
+- enb.arff, 8, False
+- jura.arff, 15., False
+- rf1.arff, 64, True
+- rf2.arff, 576, True
+- scm1d, 280, False
+- 
