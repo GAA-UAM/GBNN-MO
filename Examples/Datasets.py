@@ -14,8 +14,7 @@ random_state = 123
 np.random.seed(random_state)
 
 
-# path = 'https://github.com/lefman/mulan-extended/tree/master/datasets'
-path = r"D:\Academic\Ph.D\Programming\DataBase\PhD Thesis\Regression\mtr_datasets"
+path = 'https://github.com/lefman/mulan-extended/tree/master/datasets'
 
 
 def dt(path):
@@ -38,20 +37,8 @@ def df(name, d):
     return X, y
 
 
-
-
-name = "andro.arff"
+name = "oes97.arff"
 d = 30
 
 if __name__ == "__main__":
     X, y = df(name, d)[0], df(name, d)[1]
-
-
-# %% rf1
-# dt_name = "scm1d.arff"
-# dt_path = os.path.join(path, dt_name)
-# df = dt(dt_path)
-# X = (df.iloc[:, :280])
-# y = (df.iloc[:, 280:])
-
-

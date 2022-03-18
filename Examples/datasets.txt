@@ -1,14 +1,21 @@
 name and features for different datasets
 
-- | name | d | missing values |
+- | name | d | missing values | Missing Value Treatment |
 
-- andro.arff, 30, False
-- atp1d.arff, 411, False
-- atp7d.arff, 411, False
-- edm.arff, 16, False
-- enb.arff, 8, False
-- jura.arff, 15., False
-- rf1.arff, 64, True
-- rf2.arff, 576, True
-- scm1d, 280, False
-- 
+- andro.arff, 30, False, -
+- atp1d.arff, 411, False, -
+- atp7d.arff, 411, False, -
+- edm.arff, 16, False, -
+- enb.arff, 8, False, -
+- jura.arff, 15., False, -
+- rf1.arff, 64, True, replace with zeros
+- rf2.arff, 576, True, replace with zeros
+- scm1d, 280, False, -
+- scm20d, 61, False, -
+- scpf, 23, True, replace with most frequent values 
+- wq, 16, False, -
+- slump, 7, False, -
+- sf1, 10, False, -
+- sf2, 10, False, -
+- oes97, 263, False, -
+- oes10, 298, Fasle, -
