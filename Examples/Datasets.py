@@ -40,4 +40,4 @@ name = "oes97.arff"
 d = 30
 
 if __name__ == "__main__":
-    X, y = df(name, d)[0], df(name, d)[1]
+    X, y = df(name, d)
