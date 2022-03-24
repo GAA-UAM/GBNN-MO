@@ -14,7 +14,6 @@ def gridsearch(X, y, model, grid,
 
     cv_results_test = np.zeros((n_cv_general, 1))
     cv_results_generalization = np.zeros((n_cv_general, 1))
-    best_index_time = np.zeros((n_cv_general, 2))
     bestparams = []
     cv_results = []
     pred = np.zeros_like(y)
@@ -59,10 +58,6 @@ def gridsearch(X, y, model, grid,
             'mean_test_score'][grid_search.best_index_]
         cv_results_generalization[cv_i, 0] = grid_search.cv_results_[
             'final_test_error']
-        best_index_time[cv_i, 0] = grid_search.cv_results_[
-            'mean_fit_time'][grid_search.best_index_]
-        best_index_time[cv_i, 1] = grid_search.cv_results_[
-            'mean_score_time'][grid_search.best_index_]
 
     results = {}
     results['Metric'] = [
@@ -75,27 +70,16 @@ def gridsearch(X, y, model, grid,
         cv_results_generalization, axis=0)
     results['Std_generalization_score'] = np.std(
         cv_results_generalization, axis=0)
-    results['mean_fit_time'] = np.mean(
-        best_index_time[:, 0], axis=0)
-    results['std_fit_time'] = np.std(
-        best_index_time[:, 0], axis=0)
-    results['mean_score_time'] = np.mean(
-        best_index_time[:, 1], axis=0)
-    results['std_scoret_time'] = np.std(
-        best_index_time[:, 1], axis=0)
 
     pd.DataFrame(results).to_csv(
         title + scoring_functions + '_Summary.csv')
     pd.DataFrame(cv_results).to_csv(
         title + scoring_functions + '_CV_results.csv')
     pd.DataFrame(bestparams).to_csv(
-        title + scoring_functions + '_Best_Parameters.csv')
-    pd.DataFrame(best_index_time, columns=["Fit_time", "Score_time"]).to_csv(
-        title + 'Best_Index_time.csv')
+        title + scoring_functions + '_Parameters.csv')
 
-    np.savetxt(title + 'predicted_values.csv', pred, delimiter=',')
+    np.savetxt(title + '_predicted_values.csv', pred, delimiter=',')
     rm = {}
     rm['mean '] = np.mean(rmse, axis=0)
     rm['std '] = np.std(rmse, axis=0)
-
-    pd.DataFrame(rm, index=['rmse']).to_csv(title + 'RMSE_' + 'score.csv')
+    pd.Series(rm).to_csv(title + '_RMSE_' + 'score.csv')

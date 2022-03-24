@@ -69,5 +69,5 @@ if __name__ == "__main__":
                    random_state=random_state,
                    n_cv_general=3,
                    n_cv_intrain=3,
-                   title=name[:-5] + "target_" + str(i) + '_GBNN_SO_',
+                   title=name[:-5] + "_GBNN_SO_target" + str(i),
                    )

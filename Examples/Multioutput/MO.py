@@ -36,7 +36,7 @@ def df(name, d):
     return X, y
 
 
-X, y = df(name, d)[0], df(name, d)[1]
+X, y = df(name, d)
 
 
 model_gbnn = GNEGNERegressor(total_nn=200,
@@ -75,7 +75,7 @@ if __name__ == "__main__":
                random_state=random_state,
                n_cv_general=3,
                n_cv_intrain=3,
-               title=name + '_GBNN_MO_',
+               title=name + '_GBNN_'
                )
 
     gridsearch(X=X,
@@ -87,5 +87,5 @@ if __name__ == "__main__":
                random_state=random_state,
                n_cv_general=3,
                n_cv_intrain=3,
-               title=name + '_NN_',
+               title=name + '_NN_'
                )
