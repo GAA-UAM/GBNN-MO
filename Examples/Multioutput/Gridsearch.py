@@ -20,7 +20,6 @@ def gridsearch(X, y, model, grid,
     pred = np.zeros_like(y)
     rmse = np.zeros((n_cv_general, y.shape[1]))
 
-
     kfold_gen = KFold(n_splits=n_cv_general,
                       random_state=random_state,
                       shuffle=True)
@@ -86,11 +85,11 @@ def gridsearch(X, y, model, grid,
         best_index_time[:, 1], axis=0)
 
     pd.DataFrame(results).to_csv(
-        title + scoring_functions + '_Summary.csv')
+        title + '_Summary.csv')
     pd.DataFrame(cv_results).to_csv(
-        title + scoring_functions + '_CV_results.csv')
+        title + '_CV_results.csv')
     pd.DataFrame(bestparams).to_csv(
-        title + scoring_functions + '_Best_Parameters.csv')
+        title + '_Best_Parameters.csv')
     pd.DataFrame(best_index_time, columns=["Fit_time", "Score_time"]).to_csv(
         title + 'Best_Index_time.csv')
 
@@ -98,5 +97,6 @@ def gridsearch(X, y, model, grid,
     rm = {}
     rm['mean '] = np.mean(rmse, axis=0)
     rm['std '] = np.std(rmse, axis=0)
-    
-    pd.DataFrame(rm, index=[list('target-' + str(i) for i in range(y.shape[1]))]).to_csv(title + 'RMSE_' + 'score.csv')
+
+    pd.DataFrame(rm, index=[list('target-' + str(i)
+                 for i in range(y.shape[1]))]).to_csv(title + 'RMSE_' + 'score.csv')

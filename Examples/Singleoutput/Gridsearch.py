@@ -72,11 +72,11 @@ def gridsearch(X, y, model, grid,
         cv_results_generalization, axis=0)
 
     pd.DataFrame(results).to_csv(
-        title + scoring_functions + '_Summary.csv')
+        title + '_Summary.csv')
     pd.DataFrame(cv_results).to_csv(
-        title + scoring_functions + '_CV_results.csv')
+        title + '_CV_results.csv')
     pd.DataFrame(bestparams).to_csv(
-        title + scoring_functions + '_Parameters.csv')
+        title + '_Parameters.csv')
 
     np.savetxt(title + '_predicted_values.csv', pred, delimiter=',')
     rm = {}
