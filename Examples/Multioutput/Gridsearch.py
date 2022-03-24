@@ -20,6 +20,7 @@ def gridsearch(X, y, model, grid,
     pred = np.zeros_like(y)
     rmse = np.zeros((n_cv_general, y.shape[1]))
 
+
     kfold_gen = KFold(n_splits=n_cv_general,
                       random_state=random_state,
                       shuffle=True)
@@ -45,7 +46,7 @@ def gridsearch(X, y, model, grid,
 
         pred[test_index] = grid_search.predict(x_test)
 
-        rmse[cv_i, :] = np.sqrt(np.average(
+        rmse[cv_i, ] = np.sqrt(np.average(
             (y_test - pred[test_index])**2, axis=0))
 
         bestparams.append(grid_search.best_params_)
@@ -97,8 +98,5 @@ def gridsearch(X, y, model, grid,
     rm = {}
     rm['mean '] = np.mean(rmse, axis=0)
     rm['std '] = np.std(rmse, axis=0)
-    pd.DataFrame(rm, index=[list('target-' + str(i) for i in range(y.shape[1]))]
-                 ).to_csv(title + 'RMSE_' + 'score.csv')
-
-    pd.DataFrame(rm, index=['split-' + str(i) for i in range(n_cv_general)]
-                 ).to_csv(title + "RMSE" + '_report.csv')
+    
+    pd.DataFrame(rm, index=[list('target-' + str(i) for i in range(y.shape[1]))]).to_csv(title + 'RMSE_' + 'score.csv')
