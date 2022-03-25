@@ -34,6 +34,7 @@ class time_m():
         if dt_index.iloc[0, 2] == 'True':
             X = X.fillna(0)
             y = y.fillna(0)
+        X, y = X.values, y.values
         return X, y, title
 
     def training(self, n=1000):

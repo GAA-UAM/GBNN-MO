@@ -22,6 +22,6 @@ def dataset(name, d):
     dt_name = name
     dt_path = os.path.join(path, dt_name)
     df = dt(dt_path)
-    X = (df.iloc[:, :d]).values
-    y = (df.iloc[:, d:]).values
+    X = (df.iloc[:, :d])
+    y = (df.iloc[:, d:])
     return X, y
