@@ -1,4 +1,3 @@
-# %%
 import warnings
 import numpy as np
 import pandas as pd
@@ -61,9 +60,6 @@ class time_m():
             training_time = (process_time() - t0)
 
             new_model = gbnn_mo.to_NN()
-            print(self.dt_names[i])
-            print("GBNN", gbnn_mo.score(x_test, y_test))
-            print("---------------")
 
             t0 = process_time()
             for i in range(n):
@@ -95,7 +91,7 @@ class time_m():
             results["training_time_NN"] = training_time
             results["pred_time_NN"] = prediction_time
 
-        pd.DataFrame(results).to_csv("time")
+        pd.DataFrame(results, index=self.dt_names).to_csv("time")
 
 
 if __name__ == "__main__":
