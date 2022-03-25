@@ -91,7 +91,7 @@ class time_m():
             results["training_time_NN"] = training_time
             results["pred_time_NN"] = prediction_time
 
-        pd.DataFrame(results, index=self.dt_names).to_csv("time")
+        pd.DataFrame(results, index=self.dt_names).to_csv("time.csv")
 
 
 if __name__ == "__main__":
