@@ -30,7 +30,6 @@ class time_m():
         names = pd.read_csv(self.datasetf_info)
         dt_index = names[names['Dataset'].str.contains(self.dt_names[i])]
         X, y = dataset(dt_index.iloc[0, 0], int(dt_index.iloc[0, 1]))
-        title = self.dt_names[i]
         if dt_index.iloc[0, 2] == 'True':
             X = X.fillna(0)
             y = y.fillna(0)
@@ -81,8 +80,6 @@ class time_m():
             t0 = process_time()
             mlp.fit(x_train, y_train)
             training_time = (process_time() - t0)
-            print("NN", mlp.score(x_test, y_test))
-            print("---------------")
 
             t0 = process_time()
             for i in range(n):
@@ -91,8 +88,6 @@ class time_m():
 
             results["training_time_NN"].append(training_time)
             results["pred_time_NN"].append(prediction_time)
-
-            print('*', end='')
 
         pd.DataFrame(results, index=self.dt_names).to_csv("time.csv")
 
