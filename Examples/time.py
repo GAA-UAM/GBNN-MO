@@ -1,3 +1,4 @@
+# %%
 import warnings
 import numpy as np
 import pandas as pd
@@ -34,13 +35,14 @@ class time_m():
             X = X.fillna(0)
             y = y.fillna(0)
         X, y = X.values, y.values
-        return X, y, title
+        return X, y
 
     def training(self, n=1000):
-        results = {}
+        results = {"training_time_GBNN": [], "pred_time_GBNN": [],
+                   "training_time_NN": [], "pred_time_NN": []}
 
         for i in range(len(self.dt_names)):
-            X, y, title = self.input(i)
+            X, y = self.input(i)
 
             x_train, x_test, y_train, y_test = train_test_split(
                 X, y, test_size=0.2, random_state=random_state)
@@ -66,9 +68,8 @@ class time_m():
                 new_model.predict(x_test)
             prediction_time = (process_time() - t0) / (n * x_test.shape[0])
 
-            results["dataset"] = title
-            results["training_time_GBNN"] = training_time
-            results["pred_time_GBNN"] = prediction_time
+            results["training_time_GBNN"].append(training_time)
+            results["pred_time_GBNN"].append(prediction_time)
 
             mlp = MLPRegressor(hidden_layer_sizes=(200,),
                                max_iter=200,
@@ -88,8 +89,10 @@ class time_m():
                 mlp.predict(x_test)
             prediction_time = (process_time() - t0) / (n * x_test.shape[0])
 
-            results["training_time_NN"] = training_time
-            results["pred_time_NN"] = prediction_time
+            results["training_time_NN"].append(training_time)
+            results["pred_time_NN"].append(prediction_time)
+
+            print('*', end='')
 
         pd.DataFrame(results, index=self.dt_names).to_csv("time.csv")
 
