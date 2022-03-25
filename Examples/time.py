@@ -21,23 +21,26 @@ class time_m():
                                          "rf2.arff",
                                          "edm.arff",
                                          "enb.arff"],
-                 dataset_info='info.txt'):
+                 dataset_info='Datasets\info.txt'):
         self.n = n
         self.dt_names = dt_names
         self.datasetf_info = dataset_info
 
     def input(self, i):
         names = pd.read_csv(self.datasetf_info)
-        dt = names[names['Dataset'].str.contains(self.dt_names[i])]
-        X, y = dataset(dt.iloc[0, 0], int(dt.iloc[0, 1]))
-        if names.iloc[i, 2] == 'True':
+        dt_index = names[names['Dataset'].str.contains(self.dt_names[i])]
+        X, y = dataset(dt_index.iloc[0, 0], int(dt_index.iloc[0, 1]))
+        title = self.dt_names[i]
+        if dt_index.iloc[0, 2] == 'True':
             X = X.fillna(0)
             y = y.fillna(0)
-        return X, y
+        return X, y, title
 
     def training(self, n=1000):
+        results = {}
+
         for i in range(len(self.dt_names)):
-            X, y = self.input(i)
+            X, y, title = self.input(i)
 
             x_train, x_test, y_train, y_test = train_test_split(
                 X, y, test_size=0.2, random_state=random_state)
@@ -57,7 +60,6 @@ class time_m():
             training_time = (process_time() - t0)
 
             new_model = gbnn_mo.to_NN()
-            print(i)
             print(self.dt_names[i])
             print("GBNN", gbnn_mo.score(x_test, y_test))
             print("---------------")
@@ -67,8 +69,7 @@ class time_m():
                 new_model.predict(x_test)
             prediction_time = (process_time() - t0) / (n * x_test.shape[0])
 
-            results = {}
-            results["dataset"] = self.dt_names[i]
+            results["dataset"] = title
             results["training_time_GBNN"] = training_time
             results["pred_time_GBNN"] = prediction_time
 
@@ -96,25 +97,5 @@ class time_m():
         pd.DataFrame(results).to_csv("time")
 
 
-time_m().training()
-# %%
-names = pd.read_csv(r'Datasets/info.txt')
-
-selected = ["scm1d.arff",
-            "scm20d.arff",
-            "rf1.arff",
-            "rf2.arff",
-            "edm.arff",
-            "enb.arff"]
-
-for i in range(len(selected)):
-    dt = names[names['Dataset'].str.contains(selected[i])]
-    X, y = dataset(dt.iloc[0, 0], int(dt.iloc[0, 1]))
-    if names.iloc[i, 2] == 'True':
-        X = X.fillna(0)
-        y = y.fillna(0)
-    X = X.values
-    y = y.values
-
-    x_train, x_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.2, random_state=random_state)
+if __name__ == "__main__":
+    time_m().training()
