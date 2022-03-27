@@ -5,8 +5,7 @@ from scipy.io import arff
 warnings.simplefilter("ignore")
 
 
-# path = 'https://github.com/lefman/mulan-extended/tree/master/datasets'
-path = r'D:\Academic\Ph.D\Programming\DataBase\PhD Thesis\Regression\mtr_datasets'
+path = 'https://github.com/lefman/mulan-extended/tree/master/datasets'
 
 
 def dataset(name, d):
