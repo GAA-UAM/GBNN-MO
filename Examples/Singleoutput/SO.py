@@ -19,7 +19,6 @@ np.random.seed(random_state)
 
 path = 'https://github.com/lefman/mulan-extended/tree/master/datasets'
 
-
 def dt(path):
     df = arff.loadarff(path)
     df = pd.DataFrame(df[0])
