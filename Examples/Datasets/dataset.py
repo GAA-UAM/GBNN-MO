@@ -1,11 +1,18 @@
 import os
 import warnings
+import numpy as np
 import pandas as pd
 from scipy.io import arff
+from sklearn.impute import SimpleImputer
+
 warnings.simplefilter("ignore")
 
 
 path = 'https://github.com/lefman/mulan-extended/tree/master/datasets'
+
+# A method to return the dataset input and targets
+# name is the string value of the dataset name
+# d is the number of features
 
 
 def dataset(name, d):
@@ -14,13 +21,17 @@ def dataset(name, d):
         df = pd.DataFrame(df[0])
         return df
 
-    # A method to return the dataset input and targets
-    # name is the string value of the dataset name
-    # d is the number of features
-
     dt_name = name
     dt_path = os.path.join(path, dt_name)
     df = dt(dt_path)
-    X = (df.iloc[:, :d])
-    y = (df.iloc[:, d:])
+
+    if name == "rf1.arff" or "rf2.arff":
+        for i in df.columns:
+            df[i] = df[i].fillna(0)
+    X = (df.iloc[:, :d]).values
+    y = (df.iloc[:, d:]).values
+    if name == "scpf.arff":
+        imp = SimpleImputer(missing_values=np.nan, strategy='most_frequent')
+        X = imp.fit_transform(X)
+
     return X, y
