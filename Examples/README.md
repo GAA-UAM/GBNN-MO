@@ -13,7 +13,7 @@ This folder contains the implementation of the Multioutput experiments with the 
 It illustrates one dataset as an example. You can expand it for all the used datasets.
 
 # Time
-The related experiments to measuring the time are included in the A file. The A returns the training and prediction time. The training time is equal to the needed time for the mode to learn, and the prediction is the average time for predicting one instance of the selected dataset. For the GBNN, the prediction time would be the time of the shallow neural network, as we used the trained Regression Neural Network with the gradient Boosting approach.
+The related experiments to measuring the time are included in the (time_MO)[time_MO.py] and (time_SO)[time_SO.py] file. The (time_MO)[time_MO.py] and (time_SO)[time_SO.py] return the training and prediction time for both MO and NO approaches. The training time is equal to the needed time for the mode to learn, and the prediction is the average time for predicting one instance of the selected dataset. For the GBNN, the prediction time would be the time of the shallow neural network, as we used the trained Regression Neural Network with the gradient Boosting approach.
 
 In this experiment, we only selected a subset of the dataset, you can change the class input with your modified list to have the time for the other datasets as well.
 
