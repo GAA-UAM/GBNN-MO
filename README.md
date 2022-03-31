@@ -3,6 +3,9 @@
 # About
 The focus of this package is to provide related examples of the paper's experiments and results. You can reproduce our paper's results with the help of this package.
 
+The described and developed method is based on the GBNN paper.
+The main algorithm and code are stored [here](https://github.com/GAA-UAM/GBNN).
+
 # install
 To run the examples of this package, you have to install the GBNN package from [here](https://github.com/GAA-UAM/GBNN).
 
