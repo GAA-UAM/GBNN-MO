@@ -1,4 +1,4 @@
-# Multivariate Gradient Boosted Neural Network 
+# Gradient Boosted Neural Network-Multi-Output
 
 # About
 The focus of this package is to provide related examples of the paper's experiments and results. You can reproduce our paper's results with the help of this package.
