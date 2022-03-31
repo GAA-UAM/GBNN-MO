@@ -81,7 +81,7 @@ class time_m():
             t0 = process_time()
             mlp.fit(x_train, y_train)
             training_time = (process_time() - t0)
-            print('4')
+
             t0 = process_time()
             for i in range(n):
                 mlp.predict(x_test)
@@ -89,6 +89,8 @@ class time_m():
 
             results["training_time_NN"].append(training_time)
             results["pred_time_NN"].append(prediction_time)
+
+            print("*", end='')
 
         pd.DataFrame(results, index=self.dt_names).to_csv("time_MO.csv")
 
