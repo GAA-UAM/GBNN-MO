@@ -8,7 +8,8 @@ from sklearn.impute import SimpleImputer
 warnings.simplefilter("ignore")
 
 
-path = 'https://github.com/lefman/mulan-extended/tree/master/datasets'
+# path = 'https://github.com/lefman/mulan-extended/tree/master/datasets'
+path = r'D:\Academic\Ph.D\Programming\DataBase\PhD Thesis\Regression\mtr_datasets'
 
 # A method to return the dataset input and targets
 # name is the string value of the dataset name

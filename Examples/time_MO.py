@@ -1,3 +1,4 @@
+#%%
 import warnings
 import numpy as np
 import pandas as pd
@@ -29,10 +30,6 @@ class time_m():
         names = pd.read_csv(self.datasetf_info)
         dt_index = names[names['Dataset'].str.contains(self.dt_names[i])]
         X, y = dataset(dt_index.iloc[0, 0], int(dt_index.iloc[0, 1]))
-        if dt_index.iloc[0, 2] == 'True':
-            X = X.fillna(0)
-            y = y.fillna(0)
-        X, y = X.values, y.values
         return X, y
 
     def training(self, n=1000):
@@ -88,7 +85,7 @@ class time_m():
             results["training_time_NN"].append(training_time)
             results["pred_time_NN"].append(prediction_time)
 
-        pd.DataFrame(results, index=self.dt_names).to_csv("time.csv")
+        pd.DataFrame(results, index=self.dt_names).to_csv("time_MO.csv")
 
 
 if __name__ == "__main__":
