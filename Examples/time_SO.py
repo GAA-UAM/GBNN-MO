@@ -30,10 +30,6 @@ class time_m():
         names = pd.read_csv(self.datasetf_info)
         dt_index = names[names['Dataset'].str.contains(self.dt_names[i])]
         X, y = dataset(dt_index.iloc[0, 0], int(dt_index.iloc[0, 1]))
-        # if dt_index.iloc[0, 2] == 'True':
-        #     X = X.fillna(0)
-        #     y = y.fillna(0)
-        # X, y = X.values, y.values
         return X, y
 
     def training(self, n=1000):
@@ -77,8 +73,8 @@ class time_m():
             training_time = np.sum(training_time)
             prediction_time = np.sum(prediction_time)
 
-            results["training_time_GBNN_SO"].append(training_time)
-            results["pred_time_GBNN_SO"].append(prediction_time)
+            results["training_time_GBNN"].append(training_time)
+            results["pred_time_GBNN"].append(prediction_time)
 
             training_time = []
             prediction_time = []
@@ -106,8 +102,10 @@ class time_m():
             training_time = np.sum(training_time)
             prediction_time = np.sum(prediction_time)
 
-            results["training_time_NN_SO"].append(training_time)
-            results["pred_time_NN_SO"].append(prediction_time)
+            results["training_time_NN"].append(training_time)
+            results["pred_time_NN"].append(prediction_time)
+
+            print("*", end='')
 
         pd.DataFrame(results, index=self.dt_names).to_csv("time_SO.csv")
 

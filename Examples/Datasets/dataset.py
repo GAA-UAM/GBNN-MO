@@ -34,5 +34,4 @@ def dataset(name, d):
     if name == "scpf.arff":
         imp = SimpleImputer(missing_values=np.nan, strategy='most_frequent')
         X = imp.fit_transform(X)
-
     return X, y

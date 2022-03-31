@@ -1,4 +1,4 @@
-#%%
+# %%
 import warnings
 import numpy as np
 import pandas as pd
@@ -30,6 +30,11 @@ class time_m():
         names = pd.read_csv(self.datasetf_info)
         dt_index = names[names['Dataset'].str.contains(self.dt_names[i])]
         X, y = dataset(dt_index.iloc[0, 0], int(dt_index.iloc[0, 1]))
+        # if dt_index.iloc[0, 2] == 'True':
+        #     X = X.fillna(0)
+        #     y = y.fillna(0)
+        # X, y = X.values, y.values
+        # The commented lines are already added to the dataset method
         return X, y
 
     def training(self, n=1000):
@@ -76,7 +81,7 @@ class time_m():
             t0 = process_time()
             mlp.fit(x_train, y_train)
             training_time = (process_time() - t0)
-
+            print('4')
             t0 = process_time()
             for i in range(n):
                 mlp.predict(x_test)
