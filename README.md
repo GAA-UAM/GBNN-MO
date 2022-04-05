@@ -9,7 +9,9 @@ The main algorithm and code are stored [here](https://github.com/GAA-UAM/GBNN).
 # install
 To run the examples of this package, you have to install the GBNN package from [here](https://github.com/GAA-UAM/GBNN).
 
-`pip install GBNN`
+```bash
+pip install GBNN
+```
 
 # Citation
 If you are using this package, please cite it as below.
