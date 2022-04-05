@@ -31,7 +31,7 @@ References:
 ```
 
 
-## Key members of Multivariate Gradient Boosted Neural Network 
+## Key members of Gradient Boosted Neural Network - Multi Output
 
 * [Gonzalo Martínez-Muñoz](https://github.com/gmarmu)
 * [Seyedsaman Emami](https://github.com/samanemami)
@@ -40,7 +40,7 @@ References:
 0.0.1
 
 ## Updated
-2022-04-24
+2022-04-05
 
 # Date-released
 2022-01-01
