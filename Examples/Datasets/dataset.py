@@ -7,7 +7,7 @@ from sklearn.impute import SimpleImputer
 
 warnings.simplefilter("ignore")
 
-
+# Path to download the mtr datasets
 path = 'https://github.com/lefman/mulan-extended/tree/master/datasets'
 
 # A method to return the dataset input and targets
