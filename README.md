@@ -17,7 +17,7 @@ pip install GBNN
 ```
 
 # Citation
-If you are using this package, please cite it as below.
+To cite the paper, use the following format
 
 ```yaml
 References:
@@ -27,7 +27,6 @@ References:
       - Gonzalo Martínez-Muñoz
     Arxiv:
       - https://arxiv.org/abs/1909.12098
-      -
     Keywords:
       - Gradient Boosting
       - "Neural Network"
