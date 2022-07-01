@@ -1,7 +1,7 @@
 ![![alt text](https://raw.githubusercontent.com/GAA-UAM/GBNN-MO/main/docs/nlayer_gbnn_mo.png)](https://raw.githubusercontent.com/GAA-UAM/GBNN-MO/main/docs/nlayer_gbnn_mo.png)
 
 <img src="https://raw.githubusercontent.com/GAA-UAM/GBNN-MO/main/docs/nlayer_gbnn_mo.png" 
-     width="200" 
+     width="400" 
      height="200" />
 
 # Gradient Boosted Neural Network-Multi-Output
