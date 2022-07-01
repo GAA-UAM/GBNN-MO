@@ -1,6 +1,6 @@
 # Gradient Boosted Neural Network-Multi-Output
 
-Gradient Boosted Neural Network-Multi-Output or GBNN-MO model is a novel training procedure for shallow and deep neural networks. The GBNN-MO is specifically developed for single and multi-output regression problems. The GBNN-MO is developed over the [GBNN](https://github.com/GAA-UAM/GBNN). model.
+Gradient Boosted Neural Network-Multi-Output or GBNN-MO model is a novel training procedure for shallow and deep neural networks. The GBNN-MO is specifically developed for single and multi-output regression problems. The GBNN-MO is developed over the [GBNN](https://github.com/GAA-UAM/GBNN) model.
 
 
 # About
@@ -26,7 +26,7 @@ References:
       - Seyedsaman Emami
       - Gonzalo Martínez-Muñoz
     Arxiv:
-      - https://arxiv.org/abs/1909.12098
+      - 
     Keywords:
       - Gradient Boosting
       - "Neural Network"
@@ -38,11 +38,11 @@ References:
 * [Gonzalo Martínez-Muñoz](https://github.com/gmarmu)
 * [Seyedsaman Emami](https://github.com/samanemami)
 
-# Version 
-0.0.1
+# GBNN Version 
+0.0.2
 
 ## Updated
-2022-04-05
+01 Jul 2022
 
 # Date-released
-2022-01-01
+01 Jan 2022

@@ -29,11 +29,6 @@ class time_m():
         names = pd.read_csv(self.datasetf_info)
         dt_index = names[names['Dataset'].str.contains(self.dt_names[i])]
         X, y = dataset(dt_index.iloc[0, 0], int(dt_index.iloc[0, 1]))
-        # if dt_index.iloc[0, 2] == 'True':
-        #     X = X.fillna(0)
-        #     y = y.fillna(0)
-        # X, y = X.values, y.values
-        # The commented lines are already added to the dataset method
         return X, y
 
     def training(self, n=1000):
@@ -63,7 +58,7 @@ class time_m():
             new_model = gbnn_mo.to_NN()
 
             t0 = process_time()
-            for i in range(n):
+            for _ in range(n):
                 new_model.predict(x_test)
             prediction_time = (process_time() - t0) / (n * x_test.shape[0])
 

@@ -64,7 +64,7 @@ class time_m():
                 new_model = gbnn_mo.to_NN()
 
                 t0 = process_time()
-                for j in range(n):
+                for _ in range(n):
                     new_model.predict(x_test)
                 prediction_time.append(
                     (process_time() - t0) / (n * x_test.shape[0]))
