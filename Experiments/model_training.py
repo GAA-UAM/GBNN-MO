@@ -39,12 +39,15 @@ model_nn = MLPRegressor(solver='adam', hidden_layer_sizes=(
     12,), random_state=random_state)
 
 
+param_grid_gbnn = {'reg__num_nn_step': [1, 2, 3],
+                   'reg__subsample': [0.5, 0.75, 1],
+                   'reg__eta': [0.1, 0.025, 0.5, 1]
+                   }
+
+
 param_grid_nn = {'reg__hidden_layer_sizes': np.array(
     [1, 3, 5, 7, 11, 12, 17, 22, 27, 32, 37,
      42, 47, 52, 60, 70, 80, 90, 100, 150, 200])}
-
-
-param_grid_gbnn = {'reg__num_nn_step': [1]}
 
 if __name__ == "__main__":
 
