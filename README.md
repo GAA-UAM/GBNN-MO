@@ -1,4 +1,4 @@
-![![alt text](https://github.com/GAA-UAM/GBNN-MO/blob/main/docs/nlayer_gbnn_mo.svg)](https://github.com/GAA-UAM/GBNN-MO/blob/main/docs/nlayer_gbnn_mo.svg)
+![![alt text](https://github.com/GAA-UAM/GBNN-MO/blob/main/docs/nlayer_gbnn_mo.png)](https://github.com/GAA-UAM/GBNN-MO/blob/main/docs/nlayer_gbnn_mo.png)
 
 # Gradient Boosted Neural Network-Multi-Output
 
