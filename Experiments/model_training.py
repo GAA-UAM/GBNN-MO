@@ -9,14 +9,12 @@ import warnings
 
 
 warnings.simplefilter("ignore")
+random_state = 123
+np.random.seed(random_state)
+np.set_printoptions(precision=4, suppress=True)
+
 
 name = "andro.arff"
-d = 30
-random_state = 1
-
-np.random.seed(random_state)
-
-
 # Importing the dataset
 info = pd.read_csv('Datasets\info.txt')
 index = info[info['Dataset'].str.contains(name)]
