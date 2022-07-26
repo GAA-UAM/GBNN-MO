@@ -46,5 +46,3 @@ References:
 
 # Date-released
 01 Jan 2022
-
-![![alt text](https://raw.githubusercontent.com/GAA-UAM/GBNN-MO/main/docs/nlayer_gbnn_mo.png)](https://raw.githubusercontent.com/GAA-UAM/GBNN-MO/main/docs/nlayer_gbnn_mo.png)
