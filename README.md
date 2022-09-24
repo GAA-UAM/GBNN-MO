@@ -17,7 +17,7 @@ pip install GBNN
 ```
 
 # Citation
-To cite the paper, use the following format
+To cite the [paper](https://www.esann.org/sites/default/files/proceedings/2022/ES2022-95.pdf), use the following format
 
 ```yaml
 References:
@@ -28,7 +28,7 @@ References:
     Conference:
       - ESANN 2022 - European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning
     DOI:
-      - (10.14428/esann/2022.ES2022-95)[https://www.esann.org/sites/default/files/proceedings/2022/ES2022-95.pdf]
+      - 10.14428/esann/2022.ES2022-95
     Keywords:
       - Gradient Boosting
       - "Neural Network"
