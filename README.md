@@ -25,8 +25,10 @@ References:
     Authors:
       - Seyedsaman Emami
       - Gonzalo Martínez-Muñoz
-    Arxiv:
-      - 
+    Conference:
+      - ESANN 2022 - European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning
+    DOI:
+      - [10.14428/esann/2022.ES2022-95](https://www.esann.org/sites/default/files/proceedings/2022/ES2022-95.pdf)
     Keywords:
       - Gradient Boosting
       - "Neural Network"
