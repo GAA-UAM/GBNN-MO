@@ -13,7 +13,7 @@ The main algorithm and codes are stored [here](https://github.com/GAA-UAM/GBNN).
 To run the examples of this package, you have to install the GBNN package from [here](https://github.com/GAA-UAM/GBNN).
 
 ```bash
-pip install GBNN
+pip install gbnn
 ```
 
 # Citation
