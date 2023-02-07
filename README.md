@@ -34,6 +34,19 @@ References:
       - "Neural Network"
 ```
 
+or the BibTex format;
+
+```txt
+@inproceedings{emami2022,
+author = {Emami, Seyedsaman and Martínez-Muñoz, Gonzalo},
+year = {2022},
+month = {01},
+pages = {145-150},
+title = {Multioutput Regression Neural Network Training via Gradient Boosting},
+doi = {10.14428/esann/2022.ES2022-95}
+}
+```
+
 
 ## Key members of Gradient Boosted Neural Network - Multi Output
 
