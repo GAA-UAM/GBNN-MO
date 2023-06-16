@@ -17,33 +17,19 @@ pip install gbnn
 ```
 
 # Citation
-To cite the [paper](https://www.esann.org/sites/default/files/proceedings/2022/ES2022-95.pdf), use the following format
-
-```yaml
-References:
-    Type: article
-    Authors:
-      - Seyedsaman Emami
-      - Gonzalo Martínez-Muñoz
-    Conference:
-      - ESANN 2022 - European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning
-    DOI:
-      - 10.14428/esann/2022.ES2022-95
-    Keywords:
-      - Gradient Boosting
-      - "Neural Network"
-```
-
-or the BibTex format;
+To cite the [paper](https://www.esann.org/sites/default/files/proceedings/2022/ES2022-95.pdf), use the following BibTex format
 
 ```txt
-@inproceedings{emami2022,
-author = {Emami, Seyedsaman and Martínez-Muñoz, Gonzalo},
-year = {2022},
-month = {01},
-pages = {145-150},
-title = {Multioutput Regression Neural Network Training via Gradient Boosting},
-doi = {10.14428/esann/2022.ES2022-95}
+@inproceedings{DBLP:conf/esann/EmamiM22,
+  author       = {Seyedsaman Emami and
+                  Gonzalo Mart{\'{\i}}nez{-}Mu{\~{n}}oz},
+  title        = {Multioutput Regression Neural Network Training via Gradient Boosting},
+  booktitle    = {30th European Symposium on Artificial Neural Networks, Computational
+                  Intelligence and Machine Learning, {ESANN} 2022, Bruges, Belgium,
+                  October 5-7, 2022},
+  year         = {2022},
+  url          = {https://doi.org/10.14428/esann/2022.ES2022-95},
+  doi          = {10.14428/esann/2022.ES2022-95}
 }
 ```
 
